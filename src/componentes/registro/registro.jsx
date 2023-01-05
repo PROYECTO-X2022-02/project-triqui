@@ -1,5 +1,5 @@
 import { useState } from "react"
-import "../registro/Registro.css"
+import "./Registro.css"
 
 
 
