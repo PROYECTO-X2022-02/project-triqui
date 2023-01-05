@@ -3,23 +3,36 @@ import "../registro/Registro.css"
 
 
 
+
 function Registro() {
     const [user, setUser] = useState()
     const [ingresoUsuario, setIngresoUsuario] = useState()
-
+    const [message, setMessage] = useState('')
     const saveData = (e) => {
         const data = []
         e.preventDefault()
+        e.currentTarget.disabled = true;
 
         console.log(e.target.select.value)
 
+
+
         if (e.target.select.value === 'Un jugador') {
+            if (e.target.nick.value == "") {
+                alert("no se puede");
+            }
             console.log(e.target.nick.value)
         } else if (e.target.select.value === 'Dos jugadores') {
-            console.log(e.target.nick1.value)
-            console.log(e.target.nick2.value)
+
+            if (e.target.nick1.value == "" || e.target.nick2.value == "") {
+                console.log(e.target.nick1.value == null)
+                console.log(e.target.nick2.value == null)
+                alert("no se puede hacer");
+            }
         }
 
+
+        // console.log(data)
     }
 
     function numeroJugadores(e) {
@@ -46,7 +59,10 @@ function Registro() {
                 {
                     user === 'Un jugador' && (
                         <div>
-                            <p>Ingresa tu nick<input name="nick" type="text" /></p>
+                            <label>
+                                Ingresa tu nick
+                            </label>
+                            <input name="nick" type="text" onChange={e => setMessage(e.target.value)} />
                         </div>
                     )
                 }
@@ -54,14 +70,24 @@ function Registro() {
                 {
                     user === 'Dos jugadores' && (
                         <div>
-                            <p>Ingresa tu nick<input name="nick1" type="text" /></p>
-                            <p>Ingresa tu nick<input name="nick2" type="text" /></p>
+                            <div>
+                                <label>
+                                    Ingresa tu nick
+                                </label>
+                                <input name="nick1" type="text" onChange={e => setMessage(e.target.value)} />
+                            </div>
+                            <div>
 
+                                <label>
+                                    Ingresa tu nick
+                                </label>
+                                <input name="nick2" type="text" onChange={e => setMessage(e.target.value)} />
+                            </div>
                         </div>
                     )
                 }
 
-                <button>Login</button>
+                <button disabled={!message}>Login</button>
             </form>
 
         </div>
