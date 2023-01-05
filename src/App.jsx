@@ -1,13 +1,13 @@
-import './App.css'
-import Registro from './registro/Registro'
+import "./App.css";
+import Temporizador from "./componentes/temporizador/temporizador";
+
 
 function App() {
-
   return (
     <div className="App">
-      <Registro />
+      <Temporizador />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
