@@ -12,6 +12,8 @@ import {
   Th,
   Tr,
 } from "@chakra-ui/react";
+import Index from "../Juego/Index";
+
 import React from "react";
 
 import ButtonJ from "../Botones/Button";
@@ -45,10 +47,10 @@ export default function Juego() {
               <hr />
               <br />
             </CardHeader>
+            <Index/>
 
-            <CardBody></CardBody>
 
-            <Table className="tabla-contenido">
+            {/* <Table className="tabla-contenido">
               <Tr>
                 <Th className="tg-tabla">Nombre</Th>
                 <Th className="tg-tabla">Puntaje</Th>
@@ -57,9 +59,9 @@ export default function Juego() {
                 <Td className="tg-tabla"></Td>
                 <Td className="tg-tabla"></Td>
               </Tr>
-            </Table>
+            </Table> */}
 
-            <Box className="tablero">
+            {/* <Box className="tablero">
               <span className="box" data="1"></span>
               <span className="box" data="2"></span>
               <span className="box" data="3"></span>
@@ -69,9 +71,9 @@ export default function Juego() {
               <span className="box" data="7"></span>
               <span className="box" data="8"></span>
               <span className="box" data="9"></span>
-            </Box>
+            </Box> */}
 
-            <ButtonJ nombreBoton="Renderizar" />
+            {/* <ButtonJ nombreBoton="Renderizar" /> */}
             <ButtonJ />
           </Card>
         </Box>

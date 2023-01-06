@@ -63,7 +63,7 @@ function Registro() {
             <Text>
               <Select value={user} name="select" onChange={numeroJugadores}>
                 <option>Elige el numero de jugadores</option>
-                <option>Un jugador</option>
+                {/* <option>Un jugador</option> */}
                 <option>Dos jugadores</option>
               </Select>
             </Text>
