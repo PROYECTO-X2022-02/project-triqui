@@ -10,11 +10,6 @@ function Temporizador() {
     if (contador === 0) {
       finDelConteo();
       setCambio(!cambio);
-      if (cambio) {
-        return console.log("Le toca a tu rival");
-      } else {
-        return console.log("Te toca a ti");
-      }
     }
   }
   function finDelConteo() {
@@ -23,7 +18,6 @@ function Temporizador() {
 
   useEffect(() => {
     let temporizador = setInterval(() => {
-      console.log(contador);
       restar();
     }, 1000);
     return () => {
@@ -31,7 +25,20 @@ function Temporizador() {
     };
   }, [contador]);
 
-  return <div>{contador}</div>;
+  return (
+    <div>
+      <h1>Countdown: {contador}</h1>
+      {cambio ? (
+        <>
+          <p>Le toca a tu rival</p>
+        </>
+      ) : (
+        <>
+          <p>Te toca a ti</p>
+        </>
+      )}
+    </div>
+  );
 }
 
 export default Temporizador;
