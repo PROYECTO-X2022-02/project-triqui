@@ -1,7 +1,7 @@
 import './Square.css';
 import classNames from 'classnames';
 
-const Square = ({ value, onClick, turn, winner }) => {
+const Square = ({ value, onClick, turn , winner }) => {
 
     const handleClick = () => {
         (turn !== null && value === null) && onClick();
@@ -10,6 +10,7 @@ const Square = ({ value, onClick, turn, winner }) => {
     let squareClass = classNames({
         square: true,
         [`square--${value}`]: value !== null,
+        winner: winner,
     });
 
     return (
@@ -19,4 +20,4 @@ const Square = ({ value, onClick, turn, winner }) => {
     )
 }
 
-export default Square;
+export default Square

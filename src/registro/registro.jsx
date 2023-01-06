@@ -18,6 +18,8 @@ import { Link } from "react-router-dom";
 
 function Registro() {
   const [user, setUser] = useState();
+  const [jugador , setGugador]= useState("");
+  const [jugador2 , setGugador2]= useState("");
   const [ingresoUsuario, setIngresoUsuario] = useState();
 
   const saveData = (e) => {
@@ -33,11 +35,23 @@ function Registro() {
       console.log(e.target.nick2.value);
     }
   };
+  function gurdarNombres() {
+    localStorage.setItem("jugadores",JSON.stringify({jugador:jugador, jugador2:jugador2}));
+  }
+
+  function gudador (e){
+    setGugador(e.target.value);
+  }
+  
+  function gudador2 (e){
+    setGugador2(e.target.value);
+  }
 
   function numeroJugadores(e) {
     setUser(e.target.value);
     // console.log(e.target.value)
   }
+  
 
   function ingresoUsuarios(e) {
     setIngresoUsuario(e.target.value);
@@ -60,6 +74,7 @@ function Registro() {
           {/* <Text>View a summary of all your customers over the last month.</Text> */}
 
           <form value={ingresoUsuario} onSubmit={saveData}>
+
             <Text>
               <Select value={user} name="select" onChange={numeroJugadores}>
                 <option>Elige el numero de jugadores</option>
@@ -68,42 +83,32 @@ function Registro() {
               </Select>
             </Text>
 
-            {user === "Un jugador" && (
-              <Box margin={"10px"}>
-                <Input
-                  margin={"10px"}
-                  variant="filled"
-                  name="nick"
-                  type="text"
-                  placeholder="Nombre  Jugador"
-                />
-              </Box>
-            )}
-
-            {user === "Dos jugadores" && (
+           
               <Box margin={"10px"}>
                 <Input
                   margin={"5px"}
                   variant="filled"
                   name="nick1"
                   type="text"
-                  placeholder="Nombre  Primer Jugador"
+                  onChange={gudador}
+                  placeholder="Nombre  Primer Jugador : X"
                 />
 
                 <Input
                   margin={"5px"}
                   variant="filled"
                   name="nick2"
+                  onChange={gudador2}
                   type="text"
-                  placeholder="Nombre  Segundo Jugador"
+                  placeholder="Nombre  Segundo Jugador : O"
                 />
               </Box>
-            )}
+           
           </form>
         </CardBody>
         <CardFooter>
           <Link to="/Juego">
-            <Button>Inicio</Button>
+            <Button onClick={gurdarNombres}>Inicio</Button>
           </Link>
         </CardFooter>
       </Card>

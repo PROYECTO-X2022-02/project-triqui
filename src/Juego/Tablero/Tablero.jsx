@@ -2,11 +2,12 @@
 import Square from '../Square/Square';
 import './Tablero.css';
 
-const Tablero = ({squares, onClick, turn }) => {
+const Tablero = ({squares, onClick, turn,  winningSquares }) => {
 
     const createSquares = values => (
         values.map( value => (
             <Square
+                winner={winningSquares.includes(value)}
                 turn={turn}
                 onClick={() => onClick(value)}
                 value={squares[value]}
