@@ -1,32 +1,37 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function Temporizador() {
-  let contador = 10;
-  let cambio = false;
-  let player1 = "Le toca a tu rival";
-  let player2 = "Te toca a ti";
+  const [contador, setContador] = useState(10);
+  const [cambio, setCambio] = useState(false);
 
   function restar() {
-    contador = contador - 1;
+    setContador(contador - 1);
     if (contador === 0) {
       finDelConteo();
-      cambio = !cambio;
+      setCambio(!cambio);
       if (cambio) {
-        return console.log(player1);
+        return console.log("Le toca a tu rival");
       } else {
-        return console.log(player2);
+        return console.log("Te toca a ti");
       }
     }
   }
   function finDelConteo() {
-    contador = 10;
+    setContador(10);
   }
 
-  let temporizador = setInterval(() => {
-    console.log(contador);
-    restar();
-  }, 1000);
-  return <div>Hola</div>;
+  useEffect(() => {
+    let temporizador = setInterval(() => {
+      console.log(contador);
+      restar();
+    }, 1000);
+    return () => {
+      clearInterval(temporizador);
+    };
+  }, [contador]);
+
+  return <div>{contador}</div>;
 }
 
 export default Temporizador;
