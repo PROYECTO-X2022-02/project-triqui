@@ -7,11 +7,13 @@ const ScoreBoard = ({ scoreX, scoreO }) => {
             <div> <div className='nombre'>
                 {scoreX}
             </div>
-                {users.jugador}
+            <div className='nom'>
+                    {users.jugador}
+                </div>
             </div>
             <div>
                 <div className='nombre2'>{scoreO}</div>
-                <div>
+                <div className='nom'>
                     {users.jugador2}
                 </div>
             </div>

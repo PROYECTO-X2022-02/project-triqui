@@ -1,11 +1,16 @@
 
 
-/* .container {
-  max-width: 940px;
+.container {
+  max-width: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 0 10px;
+/* background-image:url(/public/fondo.jpg);
+background-position: cover;
+background-repeat: no-repeat;
+background-size: cover; */
 }
- */
+
 
 
 .main {

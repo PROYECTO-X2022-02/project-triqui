@@ -28,7 +28,9 @@ label {
   position: relative;
   display: block;
   padding: 0 0 0 1em;
-  background: #259f48;
+  background-color: #000;
+  border: 1px solid #ffffff;
+  box-shadow: inset 0 0 5px red,0 0 5px red  ;
   font-weight: bold;
   line-height: 3;
   cursor: pointer;

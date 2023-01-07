@@ -13,9 +13,11 @@ import React from "react";;
 
 import ButtonJ from "../Botones/Button";
 import Acordeon from "../Acordeon/acordeon";
+import Menu2 from "../menu/menu2";
 export default function Reglasj() {
   return (
-    <>
+    <Box display={"flex"} width="100%" height="100%">
+    <Menu2/>
       <Box className="contenedor">
         {/* CARD CON LAS REGLAS  */}
 
@@ -34,6 +36,7 @@ export default function Reglasj() {
             border={"3px solid black"}
             width={"50%"}
             height={"auto"}
+            p="20px"
           >
             <CardHeader>
               <Heading size="md"> Reglas del Juego</Heading>
@@ -45,10 +48,9 @@ export default function Reglasj() {
               </Text>
             </CardBody>
             <Acordeon />
-            <ButtonJ />
           </Card>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }

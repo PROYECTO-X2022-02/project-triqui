@@ -15,7 +15,6 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/Juego" element={<Juego />} />
         <Route path="/Reglas" element={<Reglasj />} />
-        <Route path="/Descripcion" element={<Descripcion />} />
         <Route path="/Registro" element={<Registro />} />
       </Routes>
     </BrowserRouter>

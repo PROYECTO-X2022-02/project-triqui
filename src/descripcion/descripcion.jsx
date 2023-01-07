@@ -105,7 +105,6 @@ export default function Descripcion() {
               </Stack>
             </CardBody>
 
-            <ButtonJ />
           </Card>
         </Box>
       </Box>

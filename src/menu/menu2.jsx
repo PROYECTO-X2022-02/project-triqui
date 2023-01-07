@@ -1,14 +1,11 @@
-import { Box, Button } from "@chakra-ui/react";
-import React from "react";
-import { Link } from "react-router-dom";
-import Descripcion from "../descripcion/descripcion";
+import { Box } from '@chakra-ui/react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Menu.css";
-import Menu2 from "./menu2";
 
-function Menu() {
-  return ( 
-    <Box display={"flex"} width="100%" height="100%">
-      {/* <Box margin="" width={"20%"} height={"100%"} bg="gray">
+const Menu2 = () => {
+    return (
+        <Box margin="" width={"auto"} height={"100%"} /* bg="gray" */>
         <Box
           textAlign={"center"}
           display={"flex"}
@@ -28,11 +25,8 @@ function Menu() {
             Jugar
           </Link>
         </Box>
-      </Box> */}
-      <Menu2/>
-      <Descripcion/>
-    </Box>
-  );
+      </Box>
+    );
 }
 
-export default Menu;
+export default Menu2;

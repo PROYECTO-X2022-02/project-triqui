@@ -1,4 +1,6 @@
-
+body{
+    background-image: url(../public//fondo.jpg);
+}
 
  #root{
   width: 100%;

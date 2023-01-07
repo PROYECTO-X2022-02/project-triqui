@@ -20,10 +20,12 @@ import ButtonJ from "../Botones/Button";
 
 import "../menu/Menu.css";
 import "./Juego.css";
+import Menu2 from "../menu/menu2";
 export default function Juego() {
   return (
-    <>
-      <Box className="contenedor">
+    <Box display={"flex"} width="100%" height="100%">
+      <Menu2/>
+      <Box height={"100%"} width="100%" >
         {/* CARD CON LAS REGLAS  */}
 
         <Box
@@ -38,46 +40,36 @@ export default function Juego() {
             align={"center"}
             justifyContent={"center"}
             bordercolor={"#00913F"}
-            border={"3px solid black"}
             width={"50%"}
             height={"auto"}
+            border= "2px solid white"
+            p={10}
+          background={"black"}
+            boxShadow= "inset 0 0 10px red,0 0 10px red"  
+            
           >
             <CardHeader>
-              <Heading size="md"> Juego </Heading>
-              <hr />
+              <Heading
+                size="md"
+                /*       fontFamily="sans-serif"
+                fontSize={30}
+                color="#FB4264"
+                textShadow="0 0 3vw #F40A35" */
+                position="relative"
+                overflow="hidden"
+                filter="brightness(200%)"
+              >
+                <span className="text">TRIQUI</span>
+                <span className="gradient"></span>
+                <span className="spotlight"></span>
+              </Heading>
+
               <br />
             </CardHeader>
-            <Index/>
-
-
-            {/* <Table className="tabla-contenido">
-              <Tr>
-                <Th className="tg-tabla">Nombre</Th>
-                <Th className="tg-tabla">Puntaje</Th>
-              </Tr>
-              <Tr>
-                <Td className="tg-tabla"></Td>
-                <Td className="tg-tabla"></Td>
-              </Tr>
-            </Table> */}
-
-            {/* <Box className="tablero">
-              <span className="box" data="1"></span>
-              <span className="box" data="2"></span>
-              <span className="box" data="3"></span>
-              <span className="box" data="4"></span>
-              <span className="box" data="5"></span>
-              <span className="box" data="6"></span>
-              <span className="box" data="7"></span>
-              <span className="box" data="8"></span>
-              <span className="box" data="9"></span>
-            </Box> */}
-
-            {/* <ButtonJ nombreBoton="Renderizar" /> */}
-            <ButtonJ />
+            <Index />
           </Card>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
