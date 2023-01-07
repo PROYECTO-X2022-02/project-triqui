@@ -1,0 +1,28 @@
+.score-board {
+    width: 320px;
+    display: grid;
+    grid-auto-flow: column;
+    margin-top: 5px;
+}
+
+.score-board .nombre2 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #4392F1;
+}
+.score-board .nombre {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #CD493A;
+}
+
+.score-board .nombre:first-child {
+    background-color: #CD493A;
+    color: aliceblue;
+}
